@@ -141,15 +141,44 @@ html body.rp-accessibility-enabled #ui-middle > * {
   background: transparent !important;
 }
 
-/* Form Fields inside Sheet */
+/* Form Fields & High Contrast Input Values inside Sheet */
 .window-app.sheet input,
 .window-app.sheet textarea,
 .window-app.sheet select,
 .window-app.sheet button {
   background-color: #12110e !important;
-  color: #f5e6c8 !important;
+  color: #ffffff !important;
   border: 1px solid #5c5243 !important;
+  opacity: 1 !important;
+  font-weight: bold !important;
 }
+
+/* CALL OF CTHULHU (CoC 7E) & GENERAL RPG CHARACTERISTIC SCORES & LABELS */
+.window-app.sheet .characteristic-value,
+.window-app.sheet [class*="characteristic"] input,
+.window-app.sheet [class*="characteristic"] span,
+.window-app.sheet [class*="characteristic"] div,
+.window-app.sheet [class*="stat"] input,
+.window-app.sheet [class*="score"] input,
+.window-app.sheet [class*="value"] input,
+.window-app.sheet [class*="value"] span,
+.window-app.sheet [class*="value"] div {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  font-weight: bold !important;
+}
+
+.window-app.sheet .characteristic-label,
+.window-app.sheet [class*="characteristic"] label,
+.window-app.sheet [class*="characteristic"] header,
+.window-app.sheet [class*="characteristic"] h4,
+.window-app.sheet [class*="stat"] label,
+.window-app.sheet [class*="score"] label {
+  color: #ffd166 !important;
+  text-shadow: none !important;
+  font-weight: bold !important;
+}
+
 
 /* FLOATING HUD CONTROL WIDGET & PANEL */
 .rp-hud-btn {

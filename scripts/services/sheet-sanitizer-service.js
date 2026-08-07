@@ -75,6 +75,7 @@ export class SheetSanitizerService {
         background-color: #181612 !important;
         background-image: none !important;
         background: #181612 !important;
+        color: #f5e6c8 !important;
       }
 
       /* LAYOUT SCROLLING FIX FOR DETAILS TAB */
@@ -137,9 +138,57 @@ export class SheetSanitizerService {
         background-image: none !important;
         background: transparent !important;
       }
+
+      /* CALL OF CTHULHU (CoC 7E) & ALL RPG SYSTEMS INPUTS & SCORES */
+      .window-app.sheet input,
+      .window-app.sheet select,
+      .window-app.sheet textarea,
+      .window-app.sheet .characteristic-value,
+      .window-app.sheet [class*="characteristic"] input,
+      .window-app.sheet [class*="characteristic"] span,
+      .window-app.sheet [class*="characteristic"] div,
+      .window-app.sheet [class*="stat"] input,
+      .window-app.sheet [class*="score"] input,
+      .window-app.sheet [class*="value"] input,
+      .window-app.sheet [class*="value"] span,
+      .window-app.sheet [class*="value"] div {
+        color: #ffffff !important;
+        opacity: 1 !important;
+        font-weight: bold !important;
+      }
+
+      .window-app.sheet .characteristic-label,
+      .window-app.sheet [class*="characteristic"] label,
+      .window-app.sheet [class*="characteristic"] header,
+      .window-app.sheet [class*="characteristic"] h4,
+      .window-app.sheet [class*="stat"] label,
+      .window-app.sheet [class*="score"] label {
+        color: #ffd166 !important;
+        text-shadow: none !important;
+        font-weight: bold !important;
+      }
     `;
 
-    // Process all container elements inside sheet only
+    // Process all inputs and values inside sheet
+    const inputs = sheetWin.querySelectorAll("input, select, textarea, .characteristic-value, [class*='value'], [class*='score']");
+    inputs.forEach(input => {
+      if (input instanceof HTMLElement) {
+        input.style.setProperty("color", "#ffffff", "important");
+        input.style.setProperty("opacity", "1", "important");
+        input.style.setProperty("font-weight", "bold", "important");
+      }
+    });
+
+    // Process all characteristic labels
+    const labels = sheetWin.querySelectorAll(".characteristic-label, [class*='characteristic'] label, [class*='characteristic'] h4, [class*='stat'] label");
+    labels.forEach(lbl => {
+      if (lbl instanceof HTMLElement) {
+        lbl.style.setProperty("color", "#ffd166", "important");
+        lbl.style.setProperty("font-weight", "bold", "important");
+      }
+    });
+
+    // Process all container elements inside sheet
     const allContainers = sheetWin.querySelectorAll("div, section, article, fieldset, ol, ul, dnd5e-card, dnd5e-skills, dnd5e-saving-throws, dnd5e-tools, [class*='card'], [class*='skill'], [class*='saving'], [class*='tool']");
     allContainers.forEach(node => {
       if (!(node instanceof HTMLElement)) return;
