@@ -15,6 +15,13 @@ export class ApplicationFocusService {
   static onRender(app) {
     if (!getSetting(SETTINGS.ENABLED)) return;
 
+    // Bring roll dialogs and new windows to top immediately above character sheets
+    if (app && typeof app.bringToTop === "function") {
+      try {
+        app.bringToTop();
+      } catch (e) {}
+    }
+
     if (getSetting(SETTINGS.AUTO_CENTER_WINDOWS) && app && !app._rpCentered) {
       this.center(app);
     }
@@ -53,7 +60,6 @@ export class ApplicationFocusService {
     app._rpCentered = true;
     centeredApps.add(app);
   }
-
 
   static focus(target) {
     if (!getSetting(SETTINGS.ENABLED) || !getSetting(SETTINGS.FOCUS_HIGHLIGHT)) return;

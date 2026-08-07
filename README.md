@@ -9,6 +9,10 @@
 
 Transforma la interfaz de Foundry VTT y los mapas de batalla en un entorno seguro, mate, libre de reflejos y con contrastes adaptados de nivel profesional, **sin alterar la información de las fichas ni tapar las escenas del juego**.
 
+> [!IMPORTANT]
+> 🚧 **WIP / TRABAJO EN PROGRESO (WORK IN PROGRESS)** 🚧
+> Este módulo se encuentra actualmente en **desarrollo activo continuo**. Estamos trabajando en mejoras de contraste para múltiples sistemas de juego (D&D 5e, Call of Cthulhu 7e, etc.), optimización del orden de capas (`z-index` de ventanas de tirada) y refinamiento visual para baja visión y Retinosis Pigmentaria.
+
 ---
 
 ## 🔗 URL de Instalación por Manifiesto (Manifest URL)
@@ -16,8 +20,9 @@ Transforma la interfaz de Foundry VTT y los mapas de batalla en un entorno segur
 Para instalarlo directamente en tu servidor o cliente de Foundry VTT, copia y pega la siguiente URL en la casilla **URL del Manifiesto** (*Manifest URL*):
 
 ```text
-https://raw.githubusercontent.com/mromera/rp-accessibility/main/module.json
+https://raw.githubusercontent.com/ManuRomera/rp-accessibility/main/module.json
 ```
+
 
 ---
 
