@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RP Accessibility — Foundry VTT Module Live Demo</title>
+  <link rel="stylesheet" href="styles/accessibility.css">
+  <link rel="stylesheet" href="styles/focus.css">
+  <link rel="stylesheet" href="styles/smart-images.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #2b2b2b;
+      color: #e0e0e0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    #demo-toolbar {
+      background: #1e1e1e;
+      padding: 12px 20px;
+      border-bottom: 2px solid #444;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      flex-wrap: wrap;
+      z-index: 1000;
+      position: relative;
+    }
+    #demo-toolbar button, #demo-toolbar select {
+      padding: 8px 14px;
+      background: #3a3a3a;
+      color: #fff;
+      border: 1px solid #666;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    #demo-toolbar button:hover {
+      background: #555;
+    }
+    .demo-workspace {
+      position: relative;
+      width: 100%;
+      height: calc(100vh - 65px);
+      display: flex;
+    }
+    #sidebar {
+      width: 260px;
+      background: #222;
+      border-right: 1px solid #444;
+      padding: 15px;
+    }
+    .main-canvas-area {
+      flex: 1;
+      position: relative;
+      background: #181818;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #board {
+      width: 90%;
+      height: 90%;
+      background: linear-gradient(135deg, #2a4858, #002b36);
+      border: 2px dashed #555;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      color: #aaa;
+      font-size: 20px;
+      transition: filter 0.2s ease;
+    }
+    .window-app {
+      position: absolute;
+      width: 480px;
+      background: #fff;
+      color: #000;
+      border: 1px solid #ccc;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      border-radius: 6px;
+      overflow: hidden;
+      top: 100px;
+      left: 320px;
+    }
+    .window-header {
+      background: #e0e0e0;
+      padding: 10px 15px;
+      font-weight: bold;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      justify-content: space-between;
+    }
+    .window-content {
+      padding: 20px;
+      background: #f9f9f9;
+      color: #222;
+    }
+    .scanned-doc-preview {
+      width: 100%;
+      background: #ffffff;
+      color: #111111;
+      padding: 15px;
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="demo-toolbar">
+    <strong>RP Accessibility Demo (Foundry VTT V11/V12/V13 Harness)</strong>
+    <button id="btn-toggle-module">Activar Módulo (Alt+A)</button>
+    <select id="select-profile">
+      <option value="rp-dark">Perfil: RP Dark Matte</option>
+      <option value="rp-high-contrast">Perfil: RP High Contrast</option>
+      <option value="rp-amber">Perfil: RP Amber Mode</option>
+    </select>
+    <button id="btn-center">Recentrar Ventana (Alt+X)</button>
+    <button id="btn-toggle-amber">Alternar Ámbar Canvas (Alt+F)</button>
+    <span style="font-size:12px; color:#aaa;">Instalado en: <code>~/Library/Application Support/FoundryVTT/Data/modules/rp-accessibility</code></span>
+  </div>
+
+  <div class="demo-workspace">
+    <div id="sidebar">
+      <h3>Foundry Sidebar</h3>
+      <p>Pestaña de Actores, Items y Compendios.</p>
+      <ul>
+        <li>Personaje Principal</li>
+        <li>Documento Escaneado</li>
+        <li>Ajustes de Juego</li>
+      </ul>
+    </div>
+
+    <div class="main-canvas-area">
+      <div id="board">
+        <div>
+          📌 <strong>Foundry PIXI Canvas Simulation</strong>
+          <p style="font-size:14px; text-align:center;">Filtros de brillo/contraste/saturación/ámbar por GPU</p>
+        </div>
+      </div>
+
+      <div class="window-app rp-active-window" id="actor-sheet-demo">
+        <div class="window-header">
+          <span class="window-title">Ficha de Personaje: D&D / Pathfinder ActorSheet</span>
+          <button style="border:none; background:none; cursor:pointer;">✕</button>
+        </div>
+        <div class="window-content">
+          <h3>Atributos Principales</h3>
+          <p>Fuerza: 16 (+3) | Destreza: 14 (+2) | Puntos de Vida: 45 / 45</p>
+
+          <h4>Documento Adjunto (Detector Inteligente de Inversión)</h4>
+          <p>A continuación se muestra un documento claro simulado. El algoritmo lo analiza mediante canvas offscreen y lo invierte a modo oscuro sin tocar retratos:</p>
+
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='120' viewBox='0 0 400 120'><rect width='100%' height='100%' fill='%23ffffff'/><text x='20' y='40' fill='%23000000' font-size='16'>Página de Manuscrito Antiguo (Fondo Blanco)</text><text x='20' y='70' fill='%23333333' font-size='14'>Luminancia > 0.72 | % Blanco > 0.55</text></svg>" alt="Documento Claro Escaneado" class="rp-smart-invert" style="width:100%; border:1px solid #bbb;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { SETTINGS } from "./scripts/core/constants.js";
+    import { ThemeService } from "./scripts/services/theme-service.js";
+    import { ApplicationFocusService } from "./scripts/services/application-focus-service.js";
+    import { CanvasFilterService } from "./scripts/services/canvas-filter-service.js";
+
+    // Mock minimal Foundry API environment
+    window.Hooks = {
+      _hooks: {},
+      on(name, fn) { (this._hooks[name] = this._hooks[name] || []).push(fn); },
+      once(name, fn) { this.on(name, fn); },
+      callAll(name, ...args) { (this._hooks[name] || []).forEach(fn => fn(...args)); }
+    };
+
+    const mockSettings = {
+      "enabled": false,
+      "profile": "rp-dark",
+      "darkMatte": true,
+      "amberMode": false,
+      "amberIntensity": 0.40,
+      "canvasBrightness": 0.70,
+      "canvasContrast": 1.15,
+      "canvasSaturation": 0.85,
+      "autoCenterWindows": true,
+      "focusHighlight": true,
+      "smartImageInvert": true
+    };
+
+    window.game = {
+      settings: {
+        get(mod, key) { return mockSettings[key]; },
+        set(mod, key, val) {
+          mockSettings[key] = val;
+          Hooks.callAll("rpAccessibilityStateChanged");
+          Hooks.callAll("rpAccessibilityCanvasFilterChanged");
+          Hooks.callAll("rpAccessibilityProfileChanged");
+          updateUIState();
+        }
+      }
+    };
+
+    function updateUIState() {
+      const enabled = mockSettings.enabled;
+      document.getElementById("btn-toggle-module").innerText = enabled ? "Desactivar Módulo (Alt+A)" : "Activar Módulo (Alt+A)";
+      
+      const board = document.getElementById("board");
+      if (enabled && mockSettings.amberMode) {
+        board.style.filter = "sepia(0.8) hue-rotate(-20deg) contrast(1.2) brightness(0.7)";
+      } else if (enabled) {
+        board.style.filter = "brightness(0.7) contrast(1.15)";
+      } else {
+        board.style.filter = "none";
+      }
+    }
+
+    ThemeService.init();
+    ApplicationFocusService.init();
+
+    document.getElementById("btn-toggle-module").addEventListener("click", () => {
+      game.settings.set("rp-accessibility", "enabled", !mockSettings.enabled);
+    });
+
+    document.getElementById("select-profile").addEventListener("change", (e) => {
+      game.settings.set("rp-accessibility", "profile", e.target.value);
+    });
+
+    document.getElementById("btn-toggle-amber").addEventListener("click", () => {
+      game.settings.set("rp-accessibility", "amberMode", !mockSettings.amberMode);
+    });
+
+    document.getElementById("btn-center").addEventListener("click", () => {
+      const win = document.getElementById("actor-sheet-demo");
+      win.style.top = "120px";
+      win.style.left = "calc(50vw - 100px)";
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.altKey && e.code === "KeyA") {
+        game.settings.set("rp-accessibility", "enabled", !mockSettings.enabled);
+      }
+      if (e.altKey && e.code === "KeyX") {
+        document.getElementById("btn-center").click();
+      }
+    });
+  </script>
+</body>
+</html>

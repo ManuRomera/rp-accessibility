@@ -1,0 +1,245 @@
+/* ==========================================================================
+   RP ACCESSIBILITY — GLOBAL DARK MATTE ANTI-GLARE THEME (WCAG AAA)
+   ========================================================================== */
+
+body.rp-accessibility-enabled {
+  --rp-bg: #11100e;
+  --rp-surface: #181612;
+  --rp-surface-alt: #211e18;
+  --rp-surface-border: #4a4235;
+
+  --rp-text: #f5e6c8;
+  --rp-text-muted: #d6c8af;
+  --rp-text-bright: #ffffff;
+
+  --rp-accent: #ffd166;
+  --rp-focus: #8ee3ff;
+
+  --rp-border: #e5c56e;
+  --rp-input-bg: #12110e;
+  --rp-input-border: #5c5243;
+}
+
+/* ND8 NEUTRAL DENSITY CAMERA FILTER ON GAME CANVAS (Anti-Glare Protection) */
+html body.rp-accessibility-enabled #board,
+html body.rp-accessibility-enabled #canvas,
+html body.rp-accessibility-enabled canvas#board,
+html body.rp-accessibility-enabled #viewing-canvas,
+html body.rp-accessibility-enabled canvas {
+  background: transparent !important;
+  background-color: transparent !important;
+  opacity: 1 !important;
+  filter: brightness(0.75) contrast(0.95) saturate(0.90) !important;
+  transition: filter 0.2s ease;
+}
+
+/* CRITICAL: Outer Layout Grid Containers MUST BE 100% TRANSPARENT & UNTOUCHED */
+html body.rp-accessibility-enabled #ui-top,
+html body.rp-accessibility-enabled #ui-left,
+html body.rp-accessibility-enabled #ui-right,
+html body.rp-accessibility-enabled #ui-bottom,
+html body.rp-accessibility-enabled #ui-middle,
+html body.rp-accessibility-enabled #interface {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
+}
+
+html body.rp-accessibility-enabled #ui-top > *,
+html body.rp-accessibility-enabled #ui-left > *,
+html body.rp-accessibility-enabled #ui-right > *,
+html body.rp-accessibility-enabled #ui-bottom > *,
+html body.rp-accessibility-enabled #ui-middle > * {
+  pointer-events: auto;
+}
+
+/* D&D 5E SHEET SPECIFIC SCOPED DARK MATTE THEME */
+.window-app.sheet {
+  --dnd5e-color-parchment: #211e18 !important;
+  --dnd5e-color-parchment-50: #211e18 !important;
+  --dnd5e-color-card-background: #211e18 !important;
+  --dnd5e-color-background: #181612 !important;
+  --dnd5e-color-text-dark: #f5e6c8 !important;
+  --dnd5e-color-text-light: #f5e6c8 !important;
+  --dnd5e-color-gold: #ffd166 !important;
+  --dnd5e-color-blue: #8ee3ff !important;
+  --dnd5e-color-header-background: #181612 !important;
+  --dnd5e-shadow-card: none !important;
+}
+
+.window-app.sheet,
+.window-app.sheet .window-content,
+.window-app.sheet form,
+.window-app.sheet .tab.details,
+.window-app.sheet [data-tab="details"] {
+  background-color: #181612 !important;
+  background-image: none !important;
+  background: #181612 !important;
+  color: #f5e6c8 !important;
+}
+
+/* FIX LAYOUT CLIPPING: Ensure middle body and Details tab scroll cleanly */
+.window-app.sheet .sheet-body,
+.window-app.sheet .middle,
+.window-app.sheet [data-tab="details"],
+.window-app.sheet .tab.details {
+  overflow-y: auto !important;
+  padding-bottom: 50px !important;
+}
+
+/* TOP 6 STAT SHIELDS */
+.window-app.sheet .ability,
+.window-app.sheet .ability-scores,
+.window-app.sheet [data-ability] {
+  background-color: #211e18 !important;
+  background-image: none !important;
+  background: #211e18 !important;
+  border: 1px solid #4a4235 !important;
+}
+
+.window-app.sheet .ability *,
+.window-app.sheet [data-ability] * {
+  color: #ffd166 !important;
+  text-shadow: none !important;
+}
+
+/* CARDS, SAVING THROWS & TOOLS CONTAINERS */
+.window-app.sheet fieldset,
+.window-app.sheet .card,
+.window-app.sheet [class*="card"],
+.window-app.sheet [class*="saving"],
+.window-app.sheet [class*="tool"],
+.window-app.sheet [class*="skill"],
+.window-app.sheet dnd5e-card,
+.window-app.sheet dnd5e-skills,
+.window-app.sheet dnd5e-saving-throws,
+.window-app.sheet dnd5e-tools {
+  background-color: #211e18 !important;
+  background-image: none !important;
+  background: #211e18 !important;
+  border-image-source: none !important;
+  border-image-slice: 0 !important;
+  border-image: none !important;
+  mask: none !important;
+  -webkit-mask: none !important;
+  -webkit-mask-image: none !important;
+  filter: none !important;
+  border: 1px solid #4a4235 !important;
+  color: #f5e6c8 !important;
+  box-shadow: none !important;
+}
+
+.window-app.sheet fieldset::before,
+.window-app.sheet fieldset::after,
+.window-app.sheet .card::before,
+.window-app.sheet .card::after {
+  display: none !important;
+  content: none !important;
+  background-image: none !important;
+  background: transparent !important;
+}
+
+/* Form Fields inside Sheet */
+.window-app.sheet input,
+.window-app.sheet textarea,
+.window-app.sheet select,
+.window-app.sheet button {
+  background-color: #12110e !important;
+  color: #f5e6c8 !important;
+  border: 1px solid #5c5243 !important;
+}
+
+/* FLOATING HUD CONTROL WIDGET & PANEL */
+.rp-hud-btn {
+  background-color: var(--rp-surface, #181612) !important;
+  color: var(--rp-accent, #ffd166) !important;
+  border: 1px solid var(--rp-border, #e5c56e) !important;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 6px;
+  pointer-events: auto !important;
+  z-index: 100;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.rp-hud-btn:hover {
+  background-color: var(--rp-surface-alt, #211e18) !important;
+  transform: scale(1.04);
+}
+
+.rp-hud-panel {
+  position: fixed;
+  top: 80px;
+  left: 200px;
+  width: 320px;
+  background-color: var(--rp-surface, #181612) !important;
+  color: var(--rp-text, #f5e6c8) !important;
+  border: 2px solid var(--rp-accent, #ffd166) !important;
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.9);
+  z-index: 10000;
+  pointer-events: auto !important;
+}
+
+.rp-hud-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 15px;
+  color: var(--rp-accent, #ffd166);
+  border-bottom: 1px solid var(--rp-surface-border, #4a4235);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.rp-hud-close {
+  background: none !important;
+  border: none !important;
+  color: var(--rp-text, #f5e6c8) !important;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.rp-hud-body label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.rp-hud-body input[type="range"] {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.rp-hud-presets {
+  display: flex;
+  gap: 6px;
+  justify-content: space-between;
+}
+
+.rp-preset-btn {
+  flex: 1;
+  padding: 6px 4px;
+  font-size: 11px;
+  background-color: var(--rp-input-bg, #12110e) !important;
+  color: var(--rp-text, #f5e6c8) !important;
+  border: 1px solid var(--rp-input-border, #5c5243) !important;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.rp-preset-btn:hover {
+  border-color: var(--rp-focus, #8ee3ff) !important;
+  color: var(--rp-accent, #ffd166) !important;
+}

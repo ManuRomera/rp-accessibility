@@ -1,0 +1,20 @@
+/* ==========================================================================
+   RP ACCESSIBILITY — FOCUS & ACTIVE WINDOW HIGHLIGHT (TUNNEL VISION UX)
+   ========================================================================== */
+
+body.rp-accessibility-enabled .rp-active-window {
+  outline: 4px solid var(--rp-focus) !important;
+  outline-offset: 2px !important;
+  box-shadow:
+    0 0 0 2px #000000,
+    0 0 16px var(--rp-focus) !important;
+  z-index: 100 !important;
+  transition: outline-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Enhanced focus indicators for keyboard navigation */
+body.rp-accessibility-enabled *:focus-visible {
+  outline: 3px solid var(--rp-focus) !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 8px var(--rp-focus) !important;
+}
