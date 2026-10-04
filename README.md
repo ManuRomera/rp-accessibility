@@ -1,9 +1,12 @@
 # 👁️ RP Accessibility — Módulo de Accesibilidad Visual para Foundry VTT
 
-![Foundry VTT Version](https://img.shields.io/badge/foundry-v11%20--%20v13-orange?style=for-the-badge&logo=foundryvtt)
-![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
-![WCAG Standard](https://img.shields.io/badge/WCAG-AAA%20Compliant-success?style=for-the-badge)
-![Client Side Only](https://img.shields.io/badge/Architecture-100%25%20Client--Side-purple?style=for-the-badge)
+<p align="center">
+  <a href="https://github.com/ManuRomera/rp-accessibility/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/ManuRomera/rp-accessibility?include_prereleases&style=for-the-badge&color=3a6ea5&label=release"></a>
+  <a href="https://foundryvtt.com"><img alt="Foundry VTT V11 – V13" src="https://img.shields.io/badge/Foundry%20VTT-V11%20%E2%80%93%20V13-57d8c8?style=for-the-badge"></a>
+  <a href="https://github.com/ManuRomera/rp-accessibility/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/ManuRomera/rp-accessibility/total?style=for-the-badge&color=ff7a1f"></a>
+  <img alt="System" src="https://img.shields.io/badge/system-agnostic-2b3245?style=for-the-badge">
+  <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-2b3245?style=for-the-badge"></a>
+</p>
 
 **`rp-accessibility`** es un módulo de accesibilidad de **última generación** para **Foundry VTT** (v11, v12 y v13), diseñado específicamente para resolver los desafíos visuales que enfrentan usuarios con baja visión, fotofobia y **Retinosis Pigmentaria (RP)**.
 
