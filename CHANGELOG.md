@@ -1,5 +1,9 @@
 # Registro de Cambios — rp-accessibility
 
+## [1.0.3] - 2026-10-05
+
+- Añadido el botón «Créditos» en los ajustes del paquete (Manu Romera · Digital RPG Design). No cambia el juego.
+
 ## [0.1.0] - 2026-08-07
 
 ### Añadido
