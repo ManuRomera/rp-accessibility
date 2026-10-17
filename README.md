@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://github.com/ManuRomera/rp-accessibility/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/ManuRomera/rp-accessibility?include_prereleases&style=for-the-badge&color=3a6ea5&label=release"></a>
   <a href="https://foundryvtt.com"><img alt="Foundry VTT V11 – V13" src="https://img.shields.io/badge/Foundry%20VTT-V11%20%E2%80%93%20V13-57d8c8?style=for-the-badge"></a>
-  <a href="https://github.com/ManuRomera/rp-accessibility/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/ManuRomera/rp-accessibility/total?style=for-the-badge&color=ff7a1f"></a>
+  <a href="https://github.com/ManuRomera/rp-accessibility/releases"><img alt="Downloads" src="https://raw.githubusercontent.com/ManuRomera/ManuRomera/main/badges/descargas/rp-accessibility.svg"></a>
   <img alt="System" src="https://img.shields.io/badge/system-agnostic-2b3245?style=for-the-badge">
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-2b3245?style=for-the-badge"></a>
 </p>
