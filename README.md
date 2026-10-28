@@ -1,6 +1,7 @@
 # 👁️ RP Accessibility — Módulo de Accesibilidad Visual para Foundry VTT
 
 <p align="center">
+  <a href="https://github.com/ManuRomera"><img alt="Manu Romera · Digital RPG Design" src="https://raw.githubusercontent.com/ManuRomera/ManuRomera/main/badges/mr-firma.svg" height="28"></a>
   <a href="https://github.com/ManuRomera/rp-accessibility/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/ManuRomera/rp-accessibility?include_prereleases&style=for-the-badge&color=3a6ea5&label=release"></a>
   <a href="https://foundryvtt.com"><img alt="Foundry VTT V11 – V13" src="https://img.shields.io/badge/Foundry%20VTT-V11%20%E2%80%93%20V13-57d8c8?style=for-the-badge"></a>
   <a href="https://github.com/ManuRomera/rp-accessibility/releases"><img alt="Downloads" src="https://raw.githubusercontent.com/ManuRomera/ManuRomera/main/badges/descargas/rp-accessibility.svg"></a>
